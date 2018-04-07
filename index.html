@@ -9,7 +9,7 @@
     </head>
     <body>
 
-      <form action="index.html" method="post">
+      <form>
 
         <h1>Registration Form</h1>
         <h3> Use tab keys to move from one input field to the next </h3>
@@ -40,6 +40,7 @@
 
         <label for="mail">Email:</label>
         <input type="email" id="mail" name="user_email">
+        <span class="error"></span>
 
         <label>Sex:</label>
         <input type="radio" id="male" value="Male" name="sex">Male<label class="light" for="male"></label>
@@ -54,9 +55,9 @@
         <label for="about">About:</label>
         <textarea id="about" name="user_about"></textarea>
 
-        <button type="submit">Submit</button>
+        <button type="submit" name="submit" id="myButton">Submit</button>
       </form>
-
+    <script src="app.js"></script>
     </body>
 </html>
 
