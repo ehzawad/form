@@ -35,15 +35,12 @@ function emptyCheck(NodeId, NodeSpan) {
   }
 }
 
-function isOptionChecked(element)
-{
+function isOptionChecked(element) {
     const radios = document.getElementsByName(element);
     let value = false;
 
-    for (let i = 0; i < radios.length; i++)
-    {
-        if (radios[i].checked)
-        {
+    for (let i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
             value = true;
             break;
         }
@@ -65,18 +62,14 @@ submitButton.addEventListener("click", function (event) {
   emptyCheck(zip, span_zip);
   emptyCheck(about, span_about);
 
-  if (isOptionChecked('sex') == false)
-  {
+  if (isOptionChecked('sex') == false) {
     window.alert('Please fill in your Sex!!');
     return false;
   }
 
-  if (isOptionChecked('user_language') == false)
-  {
+  if (isOptionChecked('user_language') == false) {
     window.alert('Please select at least one language option!!');
     return false;
   }
 
 }, false);
-
-
