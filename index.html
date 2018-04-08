@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-      <form>
+      <form action="success.html" method="post">
         <h1>Registration Form</h1>
         <h3> Use tab keys to move from one input field to the next </h3>
 
@@ -38,11 +38,11 @@
         </select>
 
         <label for="zip">Zip:</label>
-        <input type="text" pattern="[0-9]{4}" id="zip" name="user_zip">
+        <input type="text" pattern="[0-9]{4}" id="zip" name="user_zip" required>
         <span id="span_zip"></span>
 
         <label for="mail">Email:</label>
-        <input type="email" id="mail" name="user_email">
+        <input type="email" id="mail" name="user_email" required>
         <span class="error"></span>
 
         <label>Sex:</label>
