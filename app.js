@@ -13,6 +13,9 @@ var span_username = document.getElementById('span_address');
 var zip = document.getElementById('zip');
 var span_zip = document.getElementById('span_zip');
 
+var about = document.getElementById('about');
+var span_about = document.getElementById('span_about');
+
 var email = document.getElementById('mail');
 var submitButton = document.getElementById('myButton');
 var error = document.querySelector('.error');
@@ -32,6 +35,22 @@ function emptyCheck(NodeId, NodeSpan) {
   }
 }
 
+function isOptionChecked(element)
+{
+    const radios = document.getElementsByName(element);
+    let value = false;
+
+    for (let i = 0; i < radios.length; i++)
+    {
+        if (radios[i].checked)
+        {
+            value = true;
+            break;
+        }
+    }
+    return value;
+}
+
 submitButton.addEventListener("click", function (event) {
   if (!email.validity.valid) {
     error.innerHTML = "I expect an email, darling!";
@@ -44,16 +63,19 @@ submitButton.addEventListener("click", function (event) {
   emptyCheck(uname, span_uname);
   emptyCheck(address, span_address);
   emptyCheck(zip, span_zip);
+  emptyCheck(about, span_about);
 
-  // if (userid.value === "") {
-  //  span_userid.innerHTML = `Your ${userid.name} is empty`;
-  //   event.preventDefault();
-  // }
-  //
-  // if (password.value === "") {
-  //  span_password.innerHTML = "Your password is empty";
-  //   event.preventDefault();
-  // }
+  if (isOptionChecked('sex') == false)
+  {
+    window.alert('Please fill in your Sex!!');
+    return false;
+  }
+
+  if (isOptionChecked('user_language') == false)
+  {
+    window.alert('Please select at least one language option!!');
+    return false;
+  }
 
 }, false);
 
